@@ -37,10 +37,13 @@ function actualise() {
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
-    .fetchTodayForecast()
+    //.fetchTodayForecast()
+    .getThreeDayForecast()
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;
+      console.log(response);
+      console.log(data);
 
       // On récupère l'information principal
       const main = data.weather[0].main;
